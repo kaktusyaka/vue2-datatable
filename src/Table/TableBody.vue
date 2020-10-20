@@ -1,5 +1,5 @@
 <template>
-  <tbody>
+  <tbody class="bg-white divide-y divide-gray-200">
     <template v-if="data.length">
       <template v-for="item in data">
         <tr>
