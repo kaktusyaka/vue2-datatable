@@ -9,15 +9,19 @@
 
     <tbl v-bind="$props" />
     
-    <div v-if="Pagination" class="row" style="margin-top: 10px">
-      <div class="col-sm-6">
-        <strong>
-          {{ $i18nForDatatable('Total') }} {{ total }} {{ $i18nForDatatable(',') }}
-        </strong>
-        <page-size-select :query="query" :page-size-options="pageSizeOptions" />
-      </div>
-      <div class="col-sm-6">
-        <pagination class="pull-right" :total="total" :query="query" />
+    <div v-if="Pagination" class="row">
+      <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+        <div>
+          <p class="text-sm leading-5 text-gray-700">
+            Showing
+            <span class="font-medium">{{ total }}</span>
+            results
+          </p>
+          <page-size-select :query="query" :page-size-options="pageSizeOptions" />
+        </div>        
+        <div>
+          <pagination class="pull-right" :total="total" :query="query" />
+        </div>
       </div>
     </div>
   </div>
