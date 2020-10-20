@@ -8,7 +8,7 @@
     </div>
 
     <tbl v-bind="$props" />
-    
+
     <div v-if="Pagination" class="row">
       <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
         <div>
@@ -16,8 +16,8 @@
             Showing
             <span class="font-medium">{{ total }}</span>
             results
+            <page-size-select :query="query" :page-size-options="pageSizeOptions" />
           </p>
-          <page-size-select :query="query" :page-size-options="pageSizeOptions" />
         </div>        
         <div>
           <pagination class="pull-right" :total="total" :query="query" />
