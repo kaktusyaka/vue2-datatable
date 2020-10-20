@@ -19,6 +19,6 @@ export default {
 <style>
 .-page-size-select {
   display: inline-block;
-  width: 65px;
+  width: auto;
 }
 </style>
