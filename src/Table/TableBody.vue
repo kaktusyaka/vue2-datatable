@@ -2,7 +2,7 @@
   <tbody class="bg-white divide-y divide-gray-200">
     <template v-if="data.length">
       <template v-for="item in data">
-        <tr>
+        <tr class="hover:bg-gray-50">
           <td v-if="shouldRenderSelection">
             <multi-select :selection="selection" :row="item" />
           </td>
@@ -23,7 +23,7 @@
           </td>
         </tr>
         <transition name="fade">
-          <tr v-if="item.__nested__ && item.__nested__.visible">
+          <tr class="hover:bg-gray-50" v-if="item.__nested__ && item.__nested__.visible">
             <td :colspan="colLen">
               <!-- nested component -->
               <component
@@ -37,7 +37,7 @@
         </transition>
       </template>
     </template>
-    <tr v-else-if="!leftFixed && !rightFixed">
+    <tr class="hover:bg-gray-50" v-else-if="!leftFixed && !rightFixed">
       <td :colspan="colLen" class="px-6 py-4 whitespace-no-wrap leading-5 font-medium text-gray-900 text-center">
         ( {{ $i18nForDatatable('No Data') }} )
       </td>
