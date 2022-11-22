@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import throttle from 'lodash/throttle'
 
 /**
  * synchronize the scroll position among `els`
@@ -11,7 +11,7 @@ export default function (els, callback) {
   
   function syncScroll(me, others) {
     me
-      .on('scroll', _.throttle(() => {
+      .on('scroll', throttle(() => {
         if (currentDriver && currentDriver !== me) return
         currentDriver = me
 
