@@ -45,7 +45,7 @@
 </template>
 <script>
 import ColumnGroup from './ColumnGroup.vue'
-import groupBy from 'lodash/groupBy'
+import _ from 'lodash'
 import keyGen from '../_utils/keyGen'
 import replaceWith from '../_utils/replaceWith'
 import { parseStr, stringify, saveToLS, rmFromLS, getFromLS } from '../_utils/localstorage'
@@ -85,7 +85,7 @@ export default {
   },
   computed: {
     colGroups () {
-      return groupBy(
+      return _.groupBy(
         this.columns.filter(col => col.label || col.title),
         'group'
       )
